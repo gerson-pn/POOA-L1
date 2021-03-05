@@ -11,12 +11,13 @@
 
 </head>
 <body>
-	<h1>Bem vindo ao super salão de beleza!</h1>
-	<p>
-		<span>Menu:</span><br />
-		<a th:href="@{/cadastrar-clientes}"><span>Cadastrar clientes</span></a><br />
-		<a th:href="@{/listar-clientes}"><span>Listar Clientes</span></a><br />
-	</p>
+	<a th:href="@{/listar-clientes}"><span>Listar Clientes</span></a><br />
+	<h1>Formulário de cadastro de clientes!</h1>
+	
+	<form th:action="@{/cadastrar-clientes}" method="post">
+	<input type="text" placeholder="nome do cliente" name="nome"  /><br/>
+	<input type="submit"/>
+	</form>
 
 	<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
 	<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
