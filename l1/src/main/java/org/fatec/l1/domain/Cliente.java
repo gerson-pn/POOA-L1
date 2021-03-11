@@ -1,34 +1,25 @@
 package org.fatec.l1.domain;
 
-import javax.persistence.Column;
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 
 @Entity
-public class Cliente {
-	
-	@Id()
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
-	
-	@Column(nullable = false)
-	private String nome;
+public class Cliente extends Pessoa {
 
-	public long getId() {
-		return id;
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+	@JoinColumn(name = "idCliente")
+	private Set<Telefone> telefones = new HashSet<Telefone>();
+
+	public Set<Telefone> getTelefones() {
+		return telefones;
 	}
 
-	public void setId(long id) {
-		this.id = id;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setTelefones(Set<Telefone> telefones) {
+		this.telefones = telefones;
 	}
 }
