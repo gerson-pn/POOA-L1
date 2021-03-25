@@ -18,6 +18,8 @@ public class ListaController {
 	public ModelAndView cadastrarClientes() {
 		List<Cliente> clientes = cr.findAll();
 		ModelAndView mv = new ModelAndView("lista");
+		// criar aqui na hora as sugestoes
+		// foerach sugess
 		mv.addObject("clientes", clientes);
 		return mv;
 	}
