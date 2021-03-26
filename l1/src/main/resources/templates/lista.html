@@ -12,6 +12,7 @@
 </head>
 <body>
 	<a th:href="@{/cadastrar-clientes}"><span>Cadastrar Clientes</span></a><br />
+	<a th:href="@{/logout}"><span>Sair</span></a><br />
 	<h1>Lista de clientes!</h1>
 	
 	<div th:each="cliente:${clientes}">

@@ -14,9 +14,9 @@
 	<h1>Formulário de login</h1>
 	
 	<form th:action="@{/login}" method="post">
-	<input type="text" placeholder="e-mail" name="email"  /><br/>
-	<input type="password" placeholder="senha" name="senha"  /><br/>
-	<input type="submit"/>
+	<input type="text" placeholder="e-mail" id="username" name="username"  /><br/>
+	<input type="password" placeholder="senha" id="password" name="password"  /><br/>
+	<input type="submit" value="Entrar"/>
 	</form>
 
 	<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
